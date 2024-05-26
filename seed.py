@@ -14,10 +14,10 @@ def criando_alunos(quantidade_de_pessoas):
     for _ in range(quantidade_de_pessoas):
         cpf = CPF()
         nome = fake.name()
-        rg = "{}{}{}{}".format(random.randrange(10, 99),random.randrange(100, 999),random.randrange(100, 999),random.randrange(0, 9) ) 
+        # rg = "{}{}{}{}".format(random.randrange(10, 99),random.randrange(100, 999),random.randrange(100, 999),random.randrange(0, 9) ) 
         cpf = cpf.generate()
         data_nascimento = fake.date_between(start_date='-18y', end_date='today')
-        a = Aluno(nome=nome,rg=rg, cpf=cpf,data_nascimento=data_nascimento)
+        a = Aluno(nome=nome, cpf=cpf, data_nascimento=data_nascimento)
         a.save()
 
 def criando_cursos(quantidade_de_cursos):
