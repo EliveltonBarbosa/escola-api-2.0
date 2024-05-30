@@ -36,3 +36,4 @@ class AlunoSerializerV2(serializers.ModelSerializer):
     class Meta:
         model = Aluno
         fields = ['id', 'nome', 'celular', 'cpf', 'data_nascimento']
+        
