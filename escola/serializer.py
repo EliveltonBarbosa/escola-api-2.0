@@ -6,7 +6,7 @@ from escola.models import Aluno, Curso, Matricula
 class AlunoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Aluno
-        fields = ['id', 'nome', 'cpf', 'data_nascimento']
+        fields = ['id', 'nome', 'cpf', 'data_nascimento', 'foto']
 
 
 class CursoSerializer(serializers.ModelSerializer):
@@ -41,5 +41,5 @@ class ListaAlunosMatriculadosSerializer(serializers.ModelSerializer):
 class AlunoSerializerV2(serializers.ModelSerializer):
     class Meta:
         model = Aluno
-        fields = ['id', 'nome', 'celular', 'cpf', 'data_nascimento']
+        fields = ['id', 'nome', 'celular', 'cpf', 'data_nascimento', 'foto']
         
