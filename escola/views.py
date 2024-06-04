@@ -21,6 +21,7 @@ class CursosViewSet(viewsets.ModelViewSet):
     """Exibindo todos os cursos"""
     queryset = Curso.objects.all()
     serializer_class = CursoSerializer
+    http_method_names = ['get', 'post', 'put', 'path']
     
     def create(self, request):
         serializer = self.serializer_class(data=request.data)
@@ -29,6 +30,7 @@ class CursosViewSet(viewsets.ModelViewSet):
             response = Response(serializer.data, status=status.HTTP_201_CREATED)
             id = str(serializer.data['id'])
             response['Location'] = f'{request.build_absolute_uri()}{id}'
+            return response
 
 
 class MatriculaViewSet(viewsets.ModelViewSet):
